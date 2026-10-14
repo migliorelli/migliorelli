@@ -18,7 +18,7 @@
 
 Hey! I'm a developer who's been coding since I was 8, starting with **Lua scripting for Transformice**. Later, I studied at **IFES Colatina**, where I explored a wide range of programming languages, technologies, and industry tools. I'm currently pursuing a degree in **Information Systems at UFJF**.
 
-Over the years, I've gained experience in **full-stack development**, working with technologies like Laravel, Next.js, Nuxt, Vue, React, Svelte, PHP (pure and Laravel) and Golang.
+Over the years, I've gained experience in **full-stack development**, working with technologies like Laravel, Next.js, Nuxt, Vue, React, Svelte, pure PHP and Golang.
 
 These days, I'm increasingly focused on building developer tools, exploring low-level programming, and experimenting with emulation. I'm currently working on a **Game Boy Color** (in rust), diving deeper into how hardware and software work under the hood.
 
