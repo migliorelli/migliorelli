@@ -1,0 +1,29 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy na VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            if [ -d /var/www/migliorelli/.git ]; then
+              cd /var/www/migliorelli
+              git pull
+            else
+              git clone https://github.com/${{ github.repository }}.git /var/www/migliorelli
+              cd /var/www/migliorelli
+            fi
+            pip3 show ghmd > /dev/null 2>&1 || pip3 install ghmd
+            ghmd readme.md
+            mv -f readme.html index.html
